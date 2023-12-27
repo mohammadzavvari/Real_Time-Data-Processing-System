@@ -4,7 +4,6 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 import com.example.rtdatasystem.model.Customer
-import com.example.rtdatasystem.model.Product
 import com.example.rtdatasystem.service.CustomerService
 import java.util.UUID
 

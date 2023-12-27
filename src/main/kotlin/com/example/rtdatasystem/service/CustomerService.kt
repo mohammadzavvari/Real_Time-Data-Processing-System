@@ -2,7 +2,6 @@ package com.example.rtdatasystem.service
 import org.springframework.stereotype.Service
 
 import com.example.rtdatasystem.model.Customer
-import com.example.rtdatasystem.model.Product
 import com.example.rtdatasystem.repository.CustomerRepository
 import java.util.UUID
 
