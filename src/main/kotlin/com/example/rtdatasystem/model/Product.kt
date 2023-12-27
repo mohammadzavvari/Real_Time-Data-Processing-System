@@ -1,7 +1,6 @@
 package com.example.rtdatasystem.model
 
 import org.springframework.data.annotation.Id
-import org.springframework.data.cassandra.core.mapping.PrimaryKey
 import org.springframework.data.cassandra.core.mapping.Table
 import java.util.UUID
 
