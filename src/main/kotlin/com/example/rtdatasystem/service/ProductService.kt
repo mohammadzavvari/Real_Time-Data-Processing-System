@@ -35,4 +35,7 @@ class ProductService(
         return newProduct
     }
 
+    fun deleteProduct(productId: UUID){
+        productRepository.deleteById(productId)
+    }
 }

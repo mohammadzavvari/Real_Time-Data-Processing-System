@@ -37,4 +37,9 @@ class ProductController(private val productService: ProductService) {
         }
     }
 
+    @DeleteMapping("/{productId}")
+    fun deleteProduct(@PathVariable productId: UUID){
+        productService.deleteProduct(productId)
+    }
+
 }
