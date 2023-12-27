@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 import com.example.rtdatasystem.model.Customer
+import com.example.rtdatasystem.model.Product
 import com.example.rtdatasystem.service.CustomerService
 import java.util.UUID
 
@@ -24,5 +25,15 @@ class CustomerController(private val customerService: CustomerService) {
     fun createCustomer(@RequestBody customer: Customer): ResponseEntity<Customer> =
         ResponseEntity.ok(customerService.createCustomer(customer))
 
-    // Add other methods for updating and deleting customers
+    @PutMapping("/{customerId}")
+    fun updateCustomer(@PathVariable customerId: UUID, @RequestBody updatedCustomer: Customer): ResponseEntity<Customer>{
+
+        val existingCustomer = customerService.getCustomerById(customerId)
+
+        if (existingCustomer == null) return ResponseEntity.notFound().build()
+        else{
+            val updated = customerService.updateCustomer(existingCustomer, updatedCustomer)
+            return ResponseEntity.ok(updated)
+        }
+    }
 }

@@ -7,9 +7,9 @@ import java.util.UUID
 @Table("customers")
 data class Customer(
     @Id val customerId: UUID = UUID.randomUUID(),
-    val firstName: String,
-    val lastName: String,
-    val email: String,
-    val address: String,
-    val phone: String,
+    var firstName: String,
+    var lastName: String,
+    var email: String,
+    var address: String,
+    var phone: String,
 )
