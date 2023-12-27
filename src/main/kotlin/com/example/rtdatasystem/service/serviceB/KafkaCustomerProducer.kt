@@ -1,7 +1,6 @@
 package com.example.rtdatasystem.service.serviceB
 
 import com.example.rtdatasystem.model.Customer
-import com.example.rtdatasystem.model.Product
 import org.springframework.stereotype.Service
 import org.springframework.kafka.core.KafkaTemplate
 
