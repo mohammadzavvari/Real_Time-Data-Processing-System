@@ -34,4 +34,8 @@ class CustomerService(
         return newCustomer
     }
 
+    fun deleteCustomer(customerId: UUID){
+        customerRepository.deleteById(customerId)
+    }
+
 }

@@ -35,4 +35,9 @@ class CustomerController(private val customerService: CustomerService) {
             return ResponseEntity.ok(updated)
         }
     }
+
+    @DeleteMapping("/{customerId}")
+    fun deleteCustomer(@PathVariable customerId: UUID){
+        customerService.deleteCustomer(customerId)
+    }
 }
