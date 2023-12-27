@@ -15,9 +15,9 @@ class ProductController(private val productService: ProductService) {
     fun getAllProducts(): ResponseEntity<Iterable<Product>> =
         ResponseEntity.ok(productService.getAllProducts())
 
-    @GetMapping("/{productID}")
-    fun getProduct(@PathVariable productID: UUID): ResponseEntity<Product> =
-        productService.getProductById(productID)?.let { ResponseEntity.ok(it) }
+    @GetMapping("/{productId}")
+    fun getProduct(@PathVariable productId: UUID): ResponseEntity<Product> =
+        productService.getProductById(productId)?.let { ResponseEntity.ok(it) }
             ?: ResponseEntity.notFound().build()
 
     @PostMapping

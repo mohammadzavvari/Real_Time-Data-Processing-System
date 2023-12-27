@@ -11,7 +11,7 @@ class ProductService(private val productRepository: ProductRepository) {
 
     fun getAllProducts(): Iterable<Product> = productRepository.findAll()
 
-    fun getProductById(productID: UUID): Product? = productRepository.findById(productID).orElse(null)
+    fun getProductById(productId: UUID): Product? = productRepository.findById(productId).orElse(null)
 
     fun createProduct(product: Product): Product = productRepository.save(product)
 

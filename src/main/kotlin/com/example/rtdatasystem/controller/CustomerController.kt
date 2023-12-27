@@ -15,9 +15,9 @@ class CustomerController(private val customerService: CustomerService) {
     fun getAllCustomers(): ResponseEntity<Iterable<Customer>> =
         ResponseEntity.ok(customerService.getAllCustomers())
 
-    @GetMapping("/{customerID}")
-    fun getCustomer(@PathVariable customerID: UUID): ResponseEntity<Customer> =
-        customerService.getCustomerById(customerID)?.let { ResponseEntity.ok(it) }
+    @GetMapping("/{customerId}")
+    fun getCustomer(@PathVariable customerId: UUID): ResponseEntity<Customer> =
+        customerService.getCustomerById(customerId)?.let { ResponseEntity.ok(it) }
             ?: ResponseEntity.notFound().build()
 
     @PostMapping

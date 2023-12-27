@@ -11,7 +11,7 @@ class CustomerService(private val customerRepository: CustomerRepository) {
 
     fun getAllCustomers(): Iterable<Customer> = customerRepository.findAll()
 
-    fun getCustomerById(customerID: UUID): Customer? = customerRepository.findById(customerID).orElse(null)
+    fun getCustomerById(customerId: UUID): Customer? = customerRepository.findById(customerId).orElse(null)
 
     fun createCustomer(customer: Customer): Customer = customerRepository.save(customer)
 

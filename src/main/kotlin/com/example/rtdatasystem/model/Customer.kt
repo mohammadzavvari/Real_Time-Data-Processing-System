@@ -6,7 +6,7 @@ import java.util.UUID
 
 @Table("customers")
 data class Customer(
-    @Id val customerID: UUID = UUID.randomUUID(),
+    @Id val customerId: UUID = UUID.randomUUID(),
     val firstName: String,
     val lastName: String,
     val email: String,
