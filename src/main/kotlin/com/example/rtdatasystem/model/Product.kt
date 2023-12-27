@@ -7,10 +7,10 @@ import java.util.UUID
 @Table("products")
 data class Product(
     @Id val productId: UUID = UUID.randomUUID(),
-    val name: String?,
-    val price: Double?,
-    val stockQuantity: Int?,
-    val description: String?,
-    val category: String?,
-    val customerId: UUID?,
+    var name: String?,
+    var price: Double?,
+    var stockQuantity: Int?,
+    var description: String?,
+    var category: String?,
+    var customerId: UUID?,
 )

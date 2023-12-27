@@ -15,4 +15,15 @@ class ProductService(private val productRepository: ProductRepository) {
 
     fun createProduct(product: Product): Product = productRepository.save(product)
 
+    fun updateProduct(existingProduct: Product, updatedProduct: Product): Product {
+        existingProduct.name = updatedProduct.name
+        existingProduct.price = updatedProduct.price
+        existingProduct.stockQuantity = updatedProduct.stockQuantity
+        existingProduct.description = updatedProduct.description
+        existingProduct.category = updatedProduct.category
+        existingProduct.customerId = updatedProduct.customerId
+
+        return productRepository.save(existingProduct)
+    }
+
 }

@@ -25,7 +25,16 @@ class ProductController(private val productService: ProductService) {
         ResponseEntity.ok(productService.createProduct(product))
 
 
-//    @PutMapping
-//    fun updateProduct(@RequestBody product: Product): ResponseEntity<Product> =
-//        ResponseEntity
+    @PutMapping("/{productId}")
+    fun updateProduct(@PathVariable productId: UUID, @RequestBody updatedProduct: Product): ResponseEntity<Product>{
+
+        val existingProduct = productService.getProductById(productId)
+
+        if (existingProduct == null) return ResponseEntity.notFound().build()
+        else{
+            val updated = productService.updateProduct(existingProduct, updatedProduct)
+            return ResponseEntity.ok(updated)
+        }
+    }
+
 }
