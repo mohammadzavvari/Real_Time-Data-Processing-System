@@ -3,11 +3,14 @@ package com.example.rtdatasystem.service
 import org.springframework.stereotype.Service
 
 import com.example.rtdatasystem.model.Product
+import com.example.rtdatasystem.model.ProductAggregationDTO
 import com.example.rtdatasystem.repository.ProductRepository
 import com.example.rtdatasystem.service.serviceB.KafkaProductProducer
+import org.springframework.transaction.annotation.Transactional
 import java.util.UUID
 
 @Service
+@Transactional
 class ProductService(
     private val productRepository: ProductRepository,
     private val kafkaProductProducer: KafkaProductProducer) {
@@ -37,5 +40,9 @@ class ProductService(
 
     fun deleteProduct(productId: UUID){
         productRepository.deleteById(productId)
+    }
+
+    fun getProductAggregation(): List<ProductAggregationDTO> {
+        return productRepository.getProductAggregation()
     }
 }

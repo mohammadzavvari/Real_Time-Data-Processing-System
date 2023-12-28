@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 import com.example.rtdatasystem.model.Product
+import com.example.rtdatasystem.model.ProductAggregationDTO
 import com.example.rtdatasystem.service.ProductService
 import java.util.UUID
 
@@ -40,6 +41,11 @@ class ProductController(private val productService: ProductService) {
     @DeleteMapping("/{productId}")
     fun deleteProduct(@PathVariable productId: UUID){
         productService.deleteProduct(productId)
+    }
+
+    @GetMapping("/aggregation")
+    fun getProductAggregation(): List<ProductAggregationDTO> {
+        return productService.getProductAggregation()
     }
 
 }
